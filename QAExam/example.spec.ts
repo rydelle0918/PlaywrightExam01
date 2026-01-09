@@ -7,6 +7,7 @@ test.describe('TodoMVC Application', () => {
     await todoPage.addTodo(todoText);
     await expect(todoPage.todoItems).toHaveCount(1);
     await expect(todoPage.getTodoByText(todoText)).toBeVisible();
+    await expect(todoPage.getTodoByText(todoText)).toContainText('First Item test');
   });
 
   test('Scenario#2 Verify that user can mark the item as completed', async ({ todoPage }) => {
